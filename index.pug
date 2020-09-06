@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+//-так пишется комментарий(некомпилир)
+//так пишется комментарий(компилир)
+//-не нужен закрывающий тег
+html(lang="en") 
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Pug
+  body
+    //-вложенность через Enter tab
+    div
+
+    //-объявить класс для div
+    .example
+
+    //-объявить класс для других элементов
+    nav.nav
+
+    //-объявить id
+    span#text
+
+    //-объявить несколько классов
+    div.main.main--active
+
+    //-перенос текста без учета отступа
+    //-текстовое содержимое через пробел
+    p 
+      | мы перенесли
+      | текст
+
+    //-атрибуты
+    a(href="#",target="_blank")
+
+    //-раскрытие блоков
+    ul.list
+      li.item: a.link(href="#") я ссылка
+    
+    //-объявление переменной
+    - var hi = 'dima'
+    h1 hello, my name is #{hi}
+
+    //-массив переменных
+    - var arr = {gender: 'man', age: '34', hair: 'black'}
+    h2= arr.gender
+    h3 i am #{arr.age} years old. my hair is #{arr.hair}
+
+    //-mixins
+    mixin team(name, weight)
+      li #{name}  #{weight}
+    ul
+      +team('meet', '130rg')
+      +team('cheez', '120rg')
+
+    //-includes
+    include _nav.pug
+    
+    //-extend
+    extends _nav.pug
+
+
+
+
+
+
+  
+    
